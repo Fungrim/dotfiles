@@ -12,8 +12,7 @@ DISABLE_AUTO_UPDATE="true" # disable omz updates
 ZSH_THEME=robbyrussell
 plugins=(git chezmoi copyfile copypath sdk web-search zsh-syntax-highlighting zsh-autosuggestions thefuck)
 source $ZSH/oh-my-zsh.sh
-
-# ZSH Syntax highlighting
+eval $(thefuck --alias)
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

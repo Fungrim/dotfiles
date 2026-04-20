@@ -3,3 +3,6 @@ alias kgp="kubect get pods"
 alias p="podman"
 alias pc="podman compose"
 alias cm=chezmoi
+alias v=nvim
+alias vi=nvim
+alias vim=nvim

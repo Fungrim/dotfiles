@@ -1,0 +1,5 @@
+alias k=kubectl
+alias kgp="kubect get pods"
+alias p="podman"
+alias pc="podman compose"
+alias cm=chezmoi

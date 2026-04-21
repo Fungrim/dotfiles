@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -z "$1" ] && echo "Missing profile name" && exit 1
+
+PROFILE="/home/fungrim/.ssh/config.$1"
+
+if [ ! -f  $PROFILE ]; then
+	echo "Profile config does not exist: $PROFILE";
+	exit 1;
+fi
+
+cat $PROFILE > "/home/fungrim/.ssh/config"

@@ -3,7 +3,7 @@
 [ -z "$1" ] && echo "Missing argument" && exit 1
 
 if [ "-h" = "$1" ]; then
-  echo "./switch-developer-context.sh [personal | umbri | fungrim]"
+  echo "./switch-developer-context [personal | umbri | fungrim]"
   exit 0
 fi
 
@@ -11,19 +11,19 @@ case $1 in
 
 	personal)
 		git config --global user.email "contact@larsan.net"
-		switch-ssh-profile.sh personal
+		switch-ssh-profile personal
 		gcloud config configurations activate personal > /dev/null 2>&1
 		;;
 
 	fungrim)
 		git config --global user.email "lars@fungrim.com"
-		switch-ssh-profile.sh fungrim
+		switch-ssh-profile fungrim
 		gcloud config configurations activate fungrim > /dev/null 2>&1
 		;;
 
 	umbri)
 	    git config --global user.email "contact@larsan.net"
-	    switch-ssh-profile.sh personal
+	    switch-ssh-profile personal
 	    gcloud config configurations activate umbri > /dev/null 2>&1
 	    ;;
 

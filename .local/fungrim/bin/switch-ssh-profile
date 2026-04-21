@@ -2,11 +2,13 @@
 
 [ -z "$1" ] && echo "Missing profile name" && exit 1
 
-PROFILE="/home/fungrim/.ssh/config.$1"
-
-if [ ! -f  $PROFILE ]; then
-	echo "Profile config does not exist: $PROFILE";
+if [ ! -f  ~/.ssh/config.$1 ]; then
+	echo "Profile config does not exist: ~/.ssh/config.$1";
 	exit 1;
 fi
 
-cat $PROFILE > "/home/fungrim/.ssh/config"
+if [ -f ~/.ssh/config ]; then
+    rm ~/.ssh/config
+fi
+
+ln -s ~/.ssh/config.$1 ~/.ssh/config

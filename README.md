@@ -1,10 +1,11 @@
 # Fungrim Home
 
-The homes are setup with the following: 
+This is a YADM repo to setup Fungrim's personal machines. 
 
-- Nevim config
+- Neovim config
 - ZSH and Zinit with config and plugins
 - YADM as the manager
+- Personal scripts, keys and aliases
 
 ## Preprequisites
 
@@ -25,6 +26,8 @@ fc-cache -f -v
 Finally change shell - `chsh -s /bin/zsh` - and then log out/in. 
 
 ## Bootstrap
+
+Make sure `https://github.com/Fungrim/dotfiles` is publis, since you cannot bootstrap before the SSH keys are created. 
 
 ```
 yadm clone git@github.com:Fungrim/dotfiles.git

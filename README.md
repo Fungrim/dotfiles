@@ -23,7 +23,7 @@ curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mona
 fc-cache -f -v
 ```
 
-Finally change shell - `chsh -s /bin/zsh` - and then log out/in. 
+Finally change shell with `chsh -s /bin/zsh` and then log out/in. 
 
 ## Bootstrap
 

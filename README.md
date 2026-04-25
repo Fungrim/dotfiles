@@ -27,10 +27,10 @@ Finally change shell with `chsh -s /bin/zsh` and then log out/in.
 
 ## Bootstrap
 
-Make sure `https://github.com/Fungrim/dotfiles` is publis, since you cannot bootstrap before the SSH keys are created. 
+Make sure `https://github.com/Fungrim/dotfiles` is public, since you cannot bootstrap before the SSH keys are created. 
 
 ```
-yadm clone git@github.com:Fungrim/dotfiles.git
+yadm clone https://github.com/Fungrim/dotfiles.git
 ```
 
 

@@ -23,6 +23,8 @@ curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Mona
 fc-cache -f -v
 ```
 
+Update the terminal preferences, create a new profile, set as default and change fonds to the monaspace, 11pt. 
+
 Finally change shell with `chsh -s /bin/zsh` and then log out/in. 
 
 ## Bootstrap

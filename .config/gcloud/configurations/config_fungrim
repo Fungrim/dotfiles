@@ -1,0 +1,8 @@
+[core]
+project = demokrati
+account = lars@fungrim.com
+
+[compute]
+region = europe-north2
+zone = europe-north2-a
+

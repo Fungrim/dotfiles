@@ -1,5 +1,5 @@
 alias k=kubectl
-alias kgp="kubect get pods"
+alias kgp="kubectl get pods"
 alias p="podman"
 alias pc="podman compose"
 alias v=nvim
@@ -7,3 +7,5 @@ alias vi=nvim
 alias vim=nvim
 alias sdc=switch-developer-context
 alias ssc=switch-ssh-context
+alias d="docker"
+alias dc="docker compose"

@@ -33,9 +33,6 @@ zinit snippet OMZL::completion.zsh
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
 
-# The Fuck? 
-eval $(thefuck --alias)
-
 # Load aliases
 if [ -f ~/.zsh_aliases ]
 then
@@ -48,7 +45,13 @@ fi
 # Add Fungrim bin to path
 export PATH=$PATH:~/.local/fungrim/bin
 
+# Point docker to podman
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

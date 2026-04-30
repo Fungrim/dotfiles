@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for id in $(docker ps -a -q); do
+	echo "** Stopping and removing container with id $id"
+	docker stop $id 1> /dev/null
+	docker rm -f $id 1> /dev/null
+done
+
+echo "Removing all volumes"
+docker volume rm $(docker volume ls -q) 1> /dev/null

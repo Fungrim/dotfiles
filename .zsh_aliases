@@ -9,3 +9,5 @@ alias sdc=switch-developer-context
 alias ssc=switch-ssh-context
 alias d="docker"
 alias dc="docker compose"
+alias gbi="./gradlew build imageBuild"
+alias gb="./gradlew build"

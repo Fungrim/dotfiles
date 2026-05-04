@@ -22,8 +22,8 @@ case $1 in
 		;;
 
 	umbri)
-	    git config --global user.email "contact@larsan.net"
-	    switch-ssh-profile personal
+	    git config --global user.email "lars@umbri.se"
+	    switch-ssh-profile umbri
 	    gcloud config configurations activate umbri > /dev/null 2>&1
 	    ;;
 

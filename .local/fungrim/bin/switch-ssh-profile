@@ -11,4 +11,4 @@ if [ -f ~/.ssh/config ]; then
     rm ~/.ssh/config
 fi
 
-ln -s ~/.ssh/config.$1 ~/.ssh/config
+cp ~/.ssh/config.$1 ~/.ssh/config

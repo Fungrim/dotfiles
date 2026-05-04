@@ -13,6 +13,7 @@ case $1 in
 		git config --global user.email "contact@larsan.net"
 		switch-ssh-profile personal
         gh auth login --with-token < ~/.gitauth/pat_personal.txt
+        gh auth switch --user Fungrim
 		gcloud config configurations activate personal > /dev/null 2>&1
 		;;
 
@@ -20,6 +21,7 @@ case $1 in
 		git config --global user.email "lars@fungrim.com"
 		switch-ssh-profile fungrim
         gh auth login --with-token < ~/.gitauth/pat_fungrim.txt
+        gh auth switch --user vadslund
 		gcloud config configurations activate fungrim > /dev/null 2>&1
 		;;
 
@@ -27,6 +29,7 @@ case $1 in
 	    git config --global user.email "lars@umbri.se"
 	    switch-ssh-profile umbri
         gh auth login --with-token < ~/.gitauth/pat_personal.txt
+        gh auth switch --user Fungrim
 	    gcloud config configurations activate umbri > /dev/null 2>&1
 	    ;;
 

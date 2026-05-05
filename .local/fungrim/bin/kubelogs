@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[ -z "$1" ] && echo "Error: Missing pod name argument" && exit 1
+ 
+F=
+
+if [[ "$2" == "-f" ]]; then
+	F="-f"
+fi
+
+kubectl logs $F $(kubectl get pods | grep -m 1 $1 | awk '{print $1}')
+

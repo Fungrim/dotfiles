@@ -34,6 +34,20 @@ Make sure `https://github.com/Fungrim/dotfiles` is public, since you cannot boot
 ```
 yadm clone https://github.com/Fungrim/dotfiles.git
 ```
+Check yadm status: 
 
+```
+yadm status
+```
 
+When clean, start new terminal window and go through th p10k bootstrap.
 
+## Cleanup
+
+Check that `~/bin` and `~/.local/bin` are clean. And remove any old SSH keys. 
+
+Move yadm to git: 
+
+```
+
+```

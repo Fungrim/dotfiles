@@ -5,4 +5,4 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-docker inspect $(docker ps | grep -m 1 $1 | awk '{print $1}') | jq -r '.[0] | .NetworkSettings | .Networks | first(.[]) | .IPAddress'
+docker inspect $(docker ps | grep $1 | awk '{print $1}') | jq -r '.[0] | .NetworkSettings | .Networks | first(.[]) | .IPAddress'

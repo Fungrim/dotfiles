@@ -49,5 +49,11 @@ Check that `~/bin` and `~/.local/bin` are clean. And remove any old SSH keys.
 Move yadm to git: 
 
 ```
+yadm remote set-url origin git@github.com:Fungrim/dotfiles.git
+```
 
+Copy new SSH keys to GitHub. Install GitHub CLI. And then: 
+
+```
+sdc personal
 ```

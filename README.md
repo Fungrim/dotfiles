@@ -57,3 +57,14 @@ Copy new SSH keys to GitHub. Install GitHub CLI. And then:
 ```
 sdc personal
 ```
+
+Install Tailscale: 
+
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+sudo tailscale set --operator=$USER
+tailscale set --accept-routes
+```
+
+Then, also install: `gh`, `sdk`, `gcloud` and `nvm`. 

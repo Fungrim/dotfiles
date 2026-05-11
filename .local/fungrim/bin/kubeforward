@@ -1,5 +1,11 @@
 #!/bin/bash
 
 [ -z "$1" ] && echo "Error: Missing pod name argument" && exit 1
- 
-kubectl port-forward $(kubectl get pods | grep -m 1 $1 | awk '{print $1}') 8080:8080
+
+PORTS="8080:8080"
+
+if [ ! -z "$2" ]; then
+    PORTS="$2"
+fi
+
+kubectl port-forward $(kubectl get pods | grep -m 1 $1 | awk '{print $1}') $PORTS

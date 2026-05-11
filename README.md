@@ -34,6 +34,37 @@ Make sure `https://github.com/Fungrim/dotfiles` is public, since you cannot boot
 ```
 yadm clone https://github.com/Fungrim/dotfiles.git
 ```
+Check yadm status: 
 
+```
+yadm status
+```
 
+When clean, start new terminal window and go through th p10k bootstrap.
 
+## Cleanup
+
+Check that `~/bin` and `~/.local/bin` are clean. And remove any old SSH keys. 
+
+Move yadm to git: 
+
+```
+yadm remote set-url origin git@github.com:Fungrim/dotfiles.git
+```
+
+Copy new SSH keys to GitHub. Install GitHub CLI. And then: 
+
+```
+sdc personal
+```
+
+Install Tailscale: 
+
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
+sudo tailscale set --operator=$USER
+tailscale set --accept-routes
+```
+
+Then, also install: `gh`, `sdk`, `gcloud` and `nvm`. 

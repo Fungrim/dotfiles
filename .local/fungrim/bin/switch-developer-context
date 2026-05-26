@@ -7,31 +7,33 @@ if [ "-h" = "$1" ]; then
   exit 0
 fi
 
-rm ~/.kube/gke_gcloud_auth_plugin_cache
+if [ -f ~/.kube/gke_gcloud_auth_plugin_cache ]; then
+  rm ~/.kube/gke_gcloud_auth_plugin_cache
+fi
 
 case $1 in 
 
 	personal)
 		git config --global user.email "contact@larsan.net"
 		switch-ssh-profile personal
-        gh auth login --with-token < ~/.gitauth/pat_personal.txt
-        gh auth switch --user Fungrim > /dev/null
+        gh auth login --with-token < ~/.gitauth/pat_personal.txt > /dev/null
+        gh auth switch --user Fungrim > /dev/null 2>&1
 		gcloud config configurations activate personal > /dev/null 2>&1
 		;;
 
 	fungrim)
 		git config --global user.email "lars@fungrim.com"
 		switch-ssh-profile fungrim
-        gh auth login --with-token < ~/.gitauth/pat_fungrim.txt
-        gh auth switch --user vadslund > /dev/null
+        gh auth login --with-token < ~/.gitauth/pat_fungrim.txt /dev/null
+        gh auth switch --user vadslund > /dev/null 2>&1
 		gcloud config configurations activate fungrim > /dev/null 2>&1
 		;;
 
 	umbri)
 	    git config --global user.email "lars@umbri.se"
 	    switch-ssh-profile umbri
-        gh auth login --with-token < ~/.gitauth/pat_personal.txt
-        gh auth switch --user Fungrim > /dev/null
+        gh auth login --with-token < ~/.gitauth/pat_personal.txt /dev/null
+        gh auth switch --user Fungrim > /dev/null 2>&1
 	    gcloud config configurations activate umbri > /dev/null 2>&1
 	    ;;
 

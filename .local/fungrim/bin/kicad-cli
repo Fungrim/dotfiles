@@ -1,0 +1,3 @@
+#!/bin/bash
+
+flatpak run --share=network --filesystem=home:rw --command=/app/bin/kicad-cli -- --version org.kicad.KiCad

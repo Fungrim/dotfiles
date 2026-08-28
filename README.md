@@ -15,6 +15,8 @@ You need to run the following if the machine is blank:
 sudo apt-get install git zsh nvim yadm
 ```
 
+Then you also need the gitbuh CLI: https://cli.github.com/
+
 Then install Nerdfonts: 
 
 ```
@@ -34,6 +36,13 @@ Make sure `https://github.com/Fungrim/dotfiles` is public, since you cannot boot
 ```
 yadm clone https://github.com/Fungrim/dotfiles.git
 ```
+
+Decrypt:
+
+```
+yadm decrypt
+```
+
 Check yadm status: 
 
 ```

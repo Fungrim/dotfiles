@@ -7,7 +7,9 @@ if [ "-h" = "$1" ]; then
   exit 0
 fi
 
-rm ~/.kube/gke_gcloud_auth_plugin_cache
+if [ -f ~/.kube/gke_gcloud_auth_plugin_cache ]; then
+  rm ~/.kube/gke_gcloud_auth_plugin_cache
+fi
 
 case $1 in 
 

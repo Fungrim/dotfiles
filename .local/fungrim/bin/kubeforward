@@ -8,4 +8,11 @@ if [ ! -z "$2" ]; then
     PORTS="$2"
 fi
 
-kubectl port-forward $(kubectl get pods | grep -m 1 $1 | awk '{print $1}') $PORTS
+POD=$(kubectl get pods | grep -m 1 $1 | awk '{print $1}')
+
+if [ -z "$POD" ]; then
+    echo "Could not find pod by grepping string: $1"
+    exit 1;
+fi
+
+kubectl port-forward pod/$POD $PORTS

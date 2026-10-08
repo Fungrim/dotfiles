@@ -37,6 +37,14 @@ case $1 in
 	    gcloud config configurations activate umbri > /dev/null 2>&1
 	    ;;
 
+	george)
+		git config --global user.email "lars@fungrim.com"
+		switch-ssh-profile fungrim
+        gh auth login --with-token < ~/.gitauth/pat_fungrim.txt
+        gh auth switch --user vadslund > /dev/null
+		gcloud config configurations activate getgeorge > /dev/null 2>&1
+		;;
+
 	*)
 		echo "Unknown profile: $1" && exit 1
 

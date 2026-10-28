@@ -10,6 +10,16 @@ typeset -gA _DEVCTX_GCLOUD=( personal personal           fungrim fungrim        
 
 _DEVCTX_VARS=( DEVCTX GIT_SSH_COMMAND GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 GH_TOKEN CLOUDSDK_CONFIG CLOUDSDK_ACTIVE_CONFIG_NAME KUBECONFIG )
 _DEVCTX_SHIMS=$HOME/.local/fungrim/devctx/shims
+_DEVCTX_HISTFILE_DEFAULT=${HISTFILE:-$HOME/.zsh_history}
+
+# Point zsh history at the account's own file. Called while .zshrc is still being
+# sourced, the history hasn't been read yet, so setting HISTFILE is enough; from an
+# already running shell, flush the old history first and merge in the new file.
+_devctx_history() {
+  [[ $ZSH_EVAL_CONTEXT == *:file:* ]] || fc -W
+  HISTFILE=$1
+  [[ $ZSH_EVAL_CONTEXT == *:file:* ]] || fc -R
+}
 
 devctx() {
   case $1 in
@@ -18,6 +28,7 @@ devctx() {
     -c|--clear)
       unset $_DEVCTX_VARS
       path=( ${path:#$_DEVCTX_SHIMS} )
+      [[ $HISTFILE == $_DEVCTX_HISTFILE_DEFAULT ]] || _devctx_history $_DEVCTX_HISTFILE_DEFAULT
       return ;;
   esac
 
@@ -35,6 +46,7 @@ devctx() {
   export CLOUDSDK_ACTIVE_CONFIG_NAME=${_DEVCTX_GCLOUD[$a]}
   export KUBECONFIG=$HOME/.kube/config-$a
   unset GOOGLE_APPLICATION_CREDENTIALS
+  _devctx_history $HOME/.zsh_history_$a
   # shim: stops the GKE auth plugin sharing a token cache between accounts
   [[ ${path[1]} == $_DEVCTX_SHIMS ]] || path=( $_DEVCTX_SHIMS $path )
 }

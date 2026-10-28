@@ -1,0 +1,13 @@
+#!/bin/bash
+# The real plugin caches one token in ~/.kube/gke_gcloud_auth_plugin_cache, shared by
+# every account (it ignores $HOME). Under devctx, drop that cache around each call so one
+# account's token is never served to another; the plugin then asks gcloud (which honours
+# CLOUDSDK_CONFIG) for a fresh one.
+self=$(dirname "$(readlink -f "$0")")
+real=$(PATH=$(printf %s "$PATH" | tr ':' '\n' | grep -vxF "$self" | paste -sd:) command -v gke-gcloud-auth-plugin)
+[ -z "$real" ] && echo "gke-gcloud-auth-plugin not found" >&2 && exit 1
+cache=$HOME/.kube/gke_gcloud_auth_plugin_cache
+rm -f "$cache"
+"$real" "$@"; rc=$?
+rm -f "$cache"
+exit $rc

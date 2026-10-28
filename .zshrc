@@ -39,6 +39,9 @@ then
     source ~/.zsh_aliases
 fi
 
+# Per-shell account context (git/ssh/gh/gcloud/kube); in tmux the session name picks it
+[[ -f ~/.config/zsh/devctx.zsh ]] && source ~/.config/zsh/devctx.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

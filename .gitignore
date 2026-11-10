@@ -1,0 +1,8 @@
+# gcloud: track only the named configurations and the active-config pointer.
+# Everything else (credentials, tokens, logs, caches) stays local.
+.config/gcloud/*
+.config/gcloud-*/*
+!.config/gcloud/configurations/
+!.config/gcloud/active_config
+!.config/gcloud-*/configurations/
+!.config/gcloud-*/active_config

@@ -1,0 +1,7 @@
+[core]
+account = fungrim@gmail.com
+project = homelab-440620
+
+[compute]
+region = europe-north2
+

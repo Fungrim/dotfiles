@@ -1,0 +1,7 @@
+[core]
+account = lars@umbri.se
+project = appsheet-448417
+
+[compute]
+region = europe-north2
+

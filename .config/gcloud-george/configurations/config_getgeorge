@@ -1,0 +1,7 @@
+[core]
+account = lars.nilsson@getgeorge.io
+project = main-devops
+
+[compute]
+region = europe-north2
+

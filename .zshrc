@@ -39,6 +39,12 @@ then
     source ~/.zsh_aliases
 fi
 
+# Load local (non-YADM) changes
+if [ -f ~/.zsh_local ]
+then
+    source ~/.zsh_local
+fi
+
 # Per-shell account context (git/ssh/gh/gcloud/kube); in tmux the session name picks it
 [[ -f ~/.config/zsh/devctx.zsh ]] && source ~/.config/zsh/devctx.zsh
 
